@@ -1,0 +1,156 @@
+/* Google Font CDN Link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.contacto-section * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.contacto-section {
+  background: #eff2f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+.contacto-section .container {
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 60px 30px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.contacto-section .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contacto-section .container .content .left-side {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  position: relative;
+}
+.contacto-section .content .left-side::before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
+.contacto-section .content .left-side .details {
+  margin: 14px;
+  text-align: center;
+}
+.contacto-section .content .left-side .details i {
+  font-size: 30px;
+  color: #4a98f7;
+  margin-bottom: 10px;
+}
+.contacto-section .content .left-side .details .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+.contacto-section .content .left-side .details .text-one,
+.contacto-section .content .left-side .details .text-two {
+  font-size: 14px;
+  color: #afafb6;
+}
+
+.contacto-section .container .content .right-side {
+  width: 75%;
+  margin-left: 75px;
+}
+.contacto-section .content .right-side .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: #4a98f7;
+}
+.contacto-section .right-side .input-box {
+  height: 55px;
+  width: 100%;
+  margin: 12px 0;
+}
+.contacto-section .right-side .input-box input,
+.contacto-section .right-side .input-box textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #f0f1f8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.contacto-section .right-side .message-box {
+  min-height: 110px;
+}
+.contacto-section .right-side .input-box textarea {
+  padding-top: 6px;
+}
+.contacto-section .right-side .button {
+  display: inline-block;
+  margin-top: 12px;
+}
+.contacto-section .right-side .button input[type="button"] {
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #4a98f7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contacto-section .button input[type="button"]:hover {
+  background: #4a98f7;
+}
+
+.texto_contacto1{
+  color: #333;
+}
+
+@media (max-width: 950px) {
+  .contacto-section .container {
+    width: 90%;
+    padding: 30px 40px 40px 35px;
+  }
+  .contacto-section .container .content .right-side {
+    width: 75%;
+    margin-left: 55px;
+  }
+}
+@media (max-width: 820px) {
+  .contacto-section .container {
+    margin: 40px 0;
+    height: 100%;
+  }
+  .contacto-section .container .content {
+    flex-direction: column-reverse;
+  }
+  .contacto-section .container .content .left-side {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contacto-section .container .content .left-side::before {
+    display: none;
+  }
+  .contacto-section .container .content .right-side {
+    width: 100%;
+    margin-left: 0;
+  }
+}

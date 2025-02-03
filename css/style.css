@@ -1,0 +1,695 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Reset y fuentes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f0faff;
+  overflow-x: hidden; /* Evitar desplazamiento horizontal */
+}
+
+/* Estilos de navegación */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 10%;
+  background: #4a98f7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegura que la barra de navegación esté siempre al frente */
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 10%;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box .search-close-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+}
+.nav.openSearch .search-close-icon {
+  display: block; /* Mostrar cuando se abre la búsqueda */
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* Sección Inicio */
+.inicio-section {
+  position: relative; /* Necesario para la superposición */
+  background: url('/images/imagen-inicio.png') no-repeat center center/cover;
+  height: 100vh; /* Asegura que cubre toda la altura de la pantalla */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000; /* Cambiar color del texto en la sección Inicio a negro */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: 60px; /* Margen superior para evitar superposición con el navbar */
+  padding: 0 5%; /* Añadir padding a los lados */
+  z-index: 1; /* Asegura que la sección Inicio esté detrás del navbar */
+}
+
+.inicio-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Color negro con opacidad del 50% */
+  z-index: 1;
+}
+
+.inicio-section .contenido,
+.inicio-section .imagen-adicional {
+  position: relative;
+  z-index: 2;
+}
+
+.inicio-section .contenido {
+  max-width: 50%;
+}
+
+.inicio-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #4a98f7; /* Color del título igual al del navbar */
+}
+
+.inicio-section p {
+  font-size: 18px;
+  color: #fff; /* Color del texto en blanco */
+}
+
+.inicio-section .imagen-adicional {
+  max-width: 30%;
+}
+
+.inicio-section .imagen-adicional img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Estilos específicos de la sección plantillas */
+#plantillas {
+  position: relative;
+  z-index: 1; /* Ajusta el z-index según tu navbar */
+  width: 100vw; /* Ancho completo de la ventana */
+  margin-left: calc(50% - 50vw); /* Alineación correcta para el fondo completo */
+  background-color: #eff2f3; /* Color de fondo */
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+#plantillas .container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 60px 0;
+}
+
+#plantillas .section-title {
+  text-align: center;
+  color: #4a98f7; /* Color del texto igual al del navbar */
+  margin-bottom: 20px;
+}
+
+#plantillas .slide-container {
+  margin: 0 30px;
+  overflow: hidden;
+}
+
+#plantillas .card {
+  background: #fff;
+  border-radius: 8px;
+}
+
+#plantillas .card .image-box {
+  height: 300px;
+}
+
+#plantillas .card .image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+#plantillas .profile-details {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  padding: 15px;
+}
+
+/* IMAGEN */
+
+#plantillas .profile-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-bottom: 70px;
+}
+
+/* IMAGEN */
+
+#plantillas .profile-details .name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#plantillas .profile-details .job {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+
+#plantillas .swiper-navBtn {
+  color: #000;
+  height: 50px;
+  width: 50px;
+  transform: translateY(-40%);
+  background: #fff;
+  border-radius: 50%;
+}
+
+#plantillas .swiper-navBtn::before,
+#plantillas .swiper-navBtn::after {
+  font-size: 24px;
+}
+
+#plantillas .swiper-pagination-bullet {
+  background-color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  #plantillas .swiper-navBtn {
+    display: none;
+  }
+}
+
+.download-button {
+  background-color: #4a98f7; /* color de fondo */
+  color: white; /* color del texto */
+  padding: 10px 20px; /* espaciado interno */
+  border: none; /* sin borde */
+  border-radius: 5px; /* bordes redondeados */
+  cursor: pointer; /* cursor de mano al pasar por encima */
+  font-size: 14px; /* tamaño de fuente */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.download-button:hover {
+  background-color: #4a98f7; /* color de fondo al pasar el ratón */
+}
+
+
+
+/* Sección About Us */
+#about-us {
+  width: 100vw;  /* Ancho completo de la ventana */
+  margin-left: calc(50% - 50vw);  /* Alineación correcta para el fondo completo */
+  padding: 60px 20px; /* Añadir padding superior e inferior */
+  background-color: #f0faff; /* Color de fondo */
+}
+
+.about-us-section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 90px 0;
+  background: #fff;
+}
+
+.about-us-section .pic {
+  height: auto;
+  width: 500px;
+  border-radius: 12px;
+}
+
+.about-us-section .about {
+  width: 1130px;
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about-us-section .text {
+  width: 540px;
+  padding-left: 0px;  /* Puedes aumentar o disminuir este valor */
+  padding-right: 0px; /* Puedes aumentar o disminuir este valor */
+}
+
+.about-us-section .text h2 {
+  color: #4a98f7; /* Color del título igual al del navbar */
+  font-size: 48px; /* Tamaño del título igual al de Inicio */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-us-section .text h5 {
+  color: #333;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.about-us-section .text span {
+  color: #4a98f7;
+}
+
+.about-us-section .text p {
+  color: #333;
+  font-size: 18px; /* Tamaño del párrafo igual al de Inicio */
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-align: justify; /* Alineación justificada */
+}
+
+.about-us-section .data {
+  margin-top: 30px
+
+}
+
+.about-us-section .hire {
+  font-size: 18px;
+  background: #4070f4;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+
+.about-us-section .hire:hover {
+  background: #000;
+}
+
+/* Estilos de navegación */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 10%;
+  background: #4a98f7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegura que la barra de navegación esté siempre al frente */
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 10%;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box .search-close-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* Estilos de navegación */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 10%;
+  background: #4a98f7;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Asegura que la barra de navegación esté siempre al frente */
+}
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.nav .logo {
+  font-size: 22px;
+  font-weight: 500;
+}
+.nav .nav-links {
+  column-gap: 20px;
+  list-style: none;
+}
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav .search-box {
+  position: absolute;
+  right: 10%;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+}
+.search-box .search-close-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: #4a98f7;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 0 15px 0 45px;
+}
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+  .inicio-section {
+    flex-direction: column;
+    padding: 100px 20px;
+  }
+  .inicio-section .contenido {
+    max-width: 100%;
+    text-align: center;
+  }
+  .inicio-section .imagen-adicional {
+    display: none; /* Ocultar la imagen cuando no quepa en la pantalla */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #plantillas .swiper-navBtn {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: #11101d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .plantillas-section .swiper-navBtn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    font-size: 18px;
+  }
+  .nav .logo {
+    font-size: 18px;
+  }
+  .nav .nav-links {
+    max-width: 240px;
+    row-gap: 20px;
+  }
+  .nav .search-box {
+    height: 40px;
+  }
+  .search-box .search-icon,
+  .search-box .search-close-icon {
+    font-size: 18px;
+  }
+  .inicio-section {
+    padding: 80px 15px;
+  }
+  .about-us-section {
+    padding: 80px 15px;
+  }
+  .contacto-section {
+    padding: 80px 15px;
+  }
+  .inicio-section .contenido h1 {
+    font-size: 28px;
+  }
+  .inicio-section .contenido p {
+    font-size: 14px;
+  }
+  .about-us-section .text h2 {
+    font-size: 28px;
+  }
+  .about-us-section .text h5 {
+    font-size: 18px;
+  }
+  .about-us-section .text p {
+    font-size: 14px;
+  }
+  .contacto-section .container {
+    padding: 20px;
+  }
+  .contacto-section .content .left-side .details i {
+    font-size: 24px;
+  }
+  .contacto-section .content .left-side .details .topic {
+    font-size: 16px;
+  }
+  .contacto-section .content .left-side .details .text-one,
+  .contacto-section .content .left-side .details .text-two {
+    font-size: 12px;
+  }
+  .contacto-section .content .right-side .topic-text {
+    font-size: 20px;
+  }
+  .contacto-section .right-side .input-box input,
+  .contacto-section .right-side .input-box textarea {
+    font-size: 14px;
+  }
+  .contacto-section .right-side .button input[type="button"] {
+    font-size: 16px;
+  }
+}
