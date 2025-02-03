@@ -109,7 +109,7 @@ a {
 /* Sección Inicio */
 .inicio-section {
   position: relative; /* Necesario para la superposición */
-  background: url('imagen-inicio.png') no-repeat center center/cover;
+  background: url('images/imagen-inicio.png') no-repeat center center/cover;
   height: 100vh; /* Asegura que cubre toda la altura de la pantalla */
   display: flex;
   justify-content: space-between;
