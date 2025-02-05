@@ -231,7 +231,7 @@
 
 
 
-    <!-- seccion de contacto -->
+   <!-- seccion de contacto -->
 <section id="contacto" class="contacto-section">
   <div class="container">
     <div class="content">
@@ -271,6 +271,7 @@
           <div class="button">
             <input type="button" value="Enviar ahora" onclick="enviarMensaje()" />
           </div>
+          <p id="mensajeError" class="mensaje-error" style="display: none; color: red;"></p>
         </form>
       </div>
     </div>
@@ -299,15 +300,42 @@
     font-weight: bold;
     color: #4a98f7;
   }
+
+  .mensaje-error {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
 </style>
 
 <script>
   function enviarMensaje() {
+    var nombre = document.getElementById("nombre").value.trim();
+    var correo = document.getElementById("correo").value.trim();
+    var mensaje = document.getElementById("mensaje").value.trim();
+    var mensajeError = document.getElementById("mensajeError");
+    var mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+
+    mensajeError.style.display = "none";
+    mensajeConfirmacion.style.display = "none";
+
+    if (nombre === "" || correo === "" || mensaje === "") {
+      mensajeError.textContent = "El mensaje no se pudo enviar. Todos los campos son obligatorios.";
+      mensajeError.style.display = "block";
+      return;
+    }
+
+    if (!correo.includes("@")) {
+      mensajeError.textContent = "El mensaje no se pudo enviar. El correo debe contener '@'.";
+      mensajeError.style.display = "block";
+      return;
+    }
+
     document.getElementById("nombre").value = "";
     document.getElementById("correo").value = "";
     document.getElementById("mensaje").value = "";
     
-    var mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
     mensajeConfirmacion.style.display = "block";
     
     setTimeout(function () {
