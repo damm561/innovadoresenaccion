@@ -232,7 +232,6 @@
 
 
     <!-- seccion de contacto -->
-
 <section id="contacto" class="contacto-section">
   <div class="container">
     <div class="content">
@@ -258,29 +257,65 @@
       </div>
       <div class="right-side">
         <div class="topic-text">Envíanos un mensaje</div>
-        <p class="texto_contacto1">Si necesitas asesoramiento o consejos para mejorar tus presentaciones, 
-          no dudes en contactarnos a través de nuestro Instagram o por correo electrónico.</p>
-        <form action="#">
+        <p class="texto_contacto1">Si necesitas asesoramiento o consejos para mejorar tus presentaciones, no dudes en contactarnos a través de nuestro Instagram o por correo electrónico.</p>
+        <form id="contactForm">
           <div class="input-box">
-            <input type="text" placeholder="Ingrese su nombre" />
+            <input type="text" id="nombre" placeholder="Ingrese su nombre" />
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Ingrese su correo " />
+            <input type="text" id="correo" placeholder="Ingrese su correo " />
           </div>
           <div class="input-box message-box">
-            <textarea placeholder="Ingrese su mensaje"></textarea>
+            <textarea id="mensaje" placeholder="Ingrese su mensaje"></textarea>
           </div>
           <div class="button">
-            <input type="button" value="Enviar ahora" />
+            <input type="button" value="Enviar ahora" onclick="enviarMensaje()" />
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
-    <!-- fin de seccion de contacto -->
-    
+<!-- fin de seccion de contacto -->
 
+<!-- Mensaje de confirmación -->
+<div id="mensajeConfirmacion" class="mensaje-confirmacion">
+  <p>¡Enviado exitosamente!</p>
+</div>
+
+<style>
+  .mensaje-confirmacion {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a98f7;
+  }
+</style>
+
+<script>
+  function enviarMensaje() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("correo").value = "";
+    document.getElementById("mensaje").value = "";
+    
+    var mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+    mensajeConfirmacion.style.display = "block";
+    
+    setTimeout(function () {
+      mensajeConfirmacion.style.display = "none";
+    }, 3000);
+  }
+</script>
+    
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/script1.js"></script>
